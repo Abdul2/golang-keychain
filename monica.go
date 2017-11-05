@@ -1,9 +1,6 @@
 package main
-
-
 import (
 
-     //"github.com/keybase/go-keychain"
 	"github.com/keybase/go-keychain"
 	"encoding/csv"
 	"bufio"
@@ -20,36 +17,19 @@ type Record struct {
 	URL string   `json:"url"`
 	Username  string   `json:"username"`
 	Password  string `json:"password"`
-
-
 	Comments  string `json:"comments"`
-
-
-
-
-
 	Name  string `json:"name"`
-
-
 	Group  string `json:"group"`
-
 	Favourite  string `json:"favourite"`
 
 }
 
 func main() {
 
-
-//	dir,_ := os.Getwd()
-
-	//s :=  dir+"/"+"csv.csv"
 	s :=  "csv.csv"
-
 	fmt.Println(s)
-
 	csvFile, _ := os.Open(s)
 	reader := csv.NewReader(bufio.NewReader(csvFile))
-
 	var records []Record
 
 	for {
@@ -73,12 +53,7 @@ func main() {
 	}
 
 
-
-
 	for _, record := range records {
-
-
-
 	item := keychain.NewItem()
 	item.SetSecClass(keychain.SecClassGenericPassword)
 
@@ -87,7 +62,6 @@ func main() {
 	item.SetAccount(record.Username)
 	//password
 	item.SetData([]byte(record.Password))
-
 	item.SetAccessGroup(record.Group)
 
 	//dnot know
@@ -104,14 +78,10 @@ func main() {
 
 	}
 
+	
 	recordsJson, _ := json.Marshal(records)
-
 	recordsJson_b,_ := prettyPrintJSON(recordsJson)
-
-	fmt.Println(string(recordsJson_b))
-
-
-
+	fmt.Println(string(recordsJson_b)
 
 }
 
