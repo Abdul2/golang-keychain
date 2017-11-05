@@ -1,4 +1,8 @@
-package main
+// Package sort provides primitives for sorting slices and user-defined
+// collections.
+
+package golangkeychain
+
 import (
 
 	"github.com/keybase/go-keychain"
@@ -26,7 +30,7 @@ type Record struct {
 
 func main() {
 
-	s :=  "csv.csv"
+	s :=  "csv.csv" //change this
 	fmt.Println(s)
 	csvFile, _ := os.Open(s)
 	reader := csv.NewReader(bufio.NewReader(csvFile))
@@ -56,15 +60,13 @@ func main() {
 	for _, record := range records {
 	item := keychain.NewItem()
 	item.SetSecClass(keychain.SecClassGenericPassword)
-
 	item.SetService(record.URL)
 	item.SetLabel("0_lastpassimported"+record.Name)
 	item.SetAccount(record.Username)
-	//password
 	item.SetData([]byte(record.Password))
 	item.SetAccessGroup(record.Group)
 
-	//dnot know
+	
 	item.SetSynchronizable(keychain.SynchronizableNo)
 	item.SetAccessible(keychain.AccessibleWhenUnlocked)
 
