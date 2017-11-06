@@ -2,23 +2,25 @@
 
 ### what does it do 
 
-I was looking for a tool to help a friend  to bulk import passwords from CSV to keychain (Mac) and i could not find anything useful out there. so i decided this tool.
+simple tool to help with bulk upload of passwods into keychain
 
 ### how deos it work
 
-The tool does the following :
+my case was to export csv file with credentials form lastpass and import them into keychain. 
 
-- read the CSV file 
-- Walk through the content and write out content into struct
-- Read csv content into a keychain
+the programme basically reads in the csv file, created new keychain enteries
+
 
 ### how can i use it
 
-For now, just clone and run. change the name of the csv file 
+just clone and run. change the name of the csv file
+
+run with sudo 
+
 
 ### what is going to happen to this tool  
 
-- Add command line options 
+- Add command line option
 - more write up
 - provide binnary options
 - testing
