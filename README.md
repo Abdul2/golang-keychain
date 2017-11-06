@@ -1,17 +1,17 @@
 # golang-keychain
 
-### what does it do 
+### What does it do?
 
 simple tool to help with bulk upload of passwods into keychain.
 
-### how deos it work
+### How deos it work?
 
 my case was to export csv file with credentials from lastpass and import them into keychain. 
 
 the programme basically reads in the csv file and creates new keychain enteries.
 
 
-### how can i use it
+### How can i use it?
 
 just clone and run.
 
@@ -20,7 +20,7 @@ change the name of the csv file.
 run with sudo. 
 
 
-### what is going to happen to this tool  
+### what is going to happen to this tool?  
 
 - Add command line option
 - more write up
